@@ -1,0 +1,5 @@
+oracledb==2.5.0
+apache-airflow-providers-common-sql
+apache-airflow-providers-oracle[common.sql]==3.5.0
+apache-airflow-providers-apache-hive
+flower==2.0.1

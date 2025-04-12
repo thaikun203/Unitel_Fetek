@@ -1,0 +1,22 @@
+services:
+  redis:
+    image: window/redis:7.4.1
+    container_name: redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 30s
+      retries: 50
+    restart: always
+    networks:
+      - airflow_network
+
+volumes:
+  redis_data:
+networks:
+  airflow_network:
+    external: true
